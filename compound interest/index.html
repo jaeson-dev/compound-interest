@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <link rel="icon" href="favicon.png" type="image/x-icon" />
+    <meta charset="UTF-8" />
+    <title>복리계산기</title>
+    <meta
+      name="description"
+      content="간단한 복리계산기입니다. 원금, 연이율, 기간을 입력하면 미래가치와 각 연도별 합계를 계산해줍니다."
+    />
+    <meta
+      name="keywords"
+      content="복리계산기, 이자 계산기, 투자 계산기, 환율, 환율 계산기"
+    />
+    <meta name="author" content="bok-li" />
+    <!-- <link rel="stylesheet" href="style.css" /> -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <main>
+        <header>
+          <h1>복리계산기</h1>
+        </header>
+        <form>
+          <div class="form-control">
+            <label for="principal">원금</label>
+            <input
+              type="number"
+              id="principal"
+              name="principal"
+              step="1000"
+              min="0"
+              required
+            />
+            <span class="feature"> ₩</span>
+          </div>
+          <div class="form-control">
+            <label for="interest-rate">연이율(%)</label>
+            <input
+              type="number"
+              id="interest-rate"
+              name="interestRate"
+              step="0.1"
+              required
+            />
+            <span class="feature"> %</span>
+          </div>
+          <div class="form-control">
+            <label for="years">기간</label>
+            <input
+              type="number"
+              id="years"
+              name="years"
+              step="1"
+              min="0"
+              required
+            />
+          </div>
+          <button id="calculate-btn" type="button">계산하기</button>
+        </form>
+        <div class="result-box">
+          <div class="result">
+            <h2>미래가치</h2>
+            <p id="future-value"></p>
+          </div>
+          <table id="result-period">
+            <thead>
+              <tr>
+                <th>기간</th>
+                <th>원금</th>
+                <th>이자</th>
+                <th>합계</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </main>
+      <div class="converter-box">
+        <h2>환율 변환기</h2>
+        <div id="converter">
+          <div class="converter-input">
+            <label for="krw-input">원화:</label>
+            <input type="number" id="krw-input" min="0" value="0" />
+            <span class="feature">₩</span>
+          </div>
+          <br />
+          <div class="converter-input">
+            <label for="usd-input">달러:</label>
+            <input type="number" id="usd-input" min="0" value="0" />
+            <span class="feature">$</span>
+          </div>
+        </div>
+        <div id="exchange-rate">
+          <p>현재 환율: <span id="rate"></span> 원</p>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>2023 &copy; 복리계산기</p>
+    </footer>
+    <script
+      defer
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-6PJBMLHCH9"
+    ></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+
+      gtag('config', 'G-6PJBMLHCH9');
+    </script>
+
+    <script defer src="script.js"></script>
+  </body>
+</html>
